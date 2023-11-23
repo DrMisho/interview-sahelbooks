@@ -32,7 +32,7 @@ class ProductService extends Service
 
         $query->when($array['search'] ?? false, fn($query, $search) =>
             $query->where(function($query) use($search) {
-                
+                    $query->where('item', 'like', '%'. $search. '%');
                 })
             );
 
